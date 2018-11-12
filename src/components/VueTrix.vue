@@ -9,7 +9,7 @@
     </trix-editor>
     <input
       type="hidden"
-      name="content"
+      :name="inputName"
       :id="inputId || randomId"
       :value.prop="initContent">
   </div>
@@ -35,6 +35,13 @@ export default {
   },
   props: {
     inputId: {
+      type: String,
+      required: false,
+      default () {
+        return ''
+      }
+    },
+    inputName: {
       type: String,
       required: false,
       default () {
